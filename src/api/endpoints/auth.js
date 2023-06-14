@@ -6,9 +6,9 @@ const AuthApi = {
         return res;
     },
 
-    login: async (data) => {
-        const res = await handling.request('post', '/login', data, null, true);
-        return res;
+    login: async (data = {username: 'default', password: 'default'}) => {
+    const res = await handling.request('post', '/login', data, null, true);
+    return res;
     },
 
     setAccessToken: (token) => {
